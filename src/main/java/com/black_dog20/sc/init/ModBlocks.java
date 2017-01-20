@@ -10,13 +10,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModBlocks {
 
-	//public static final BlockAncientTable ancientTable = new BlockAncientTable();
-	
 	public static CobbleGen cobbleGen;
 	
-	@SuppressWarnings("deprecation")
 	public static void init() {
 		cobbleGen = new CobbleGen(Material.ROCK);
-		//GameRegistry.registerBlock(ancientTable, "ancientTable");
 	}
 }

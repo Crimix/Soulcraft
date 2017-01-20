@@ -25,7 +25,7 @@ public class ItemSC extends Item {
 
 		this();
 		this.setRegistryName(unLocalName);
-		this.setUnlocalizedName(this.getRegistryName().toString());
+		this.setUnlocalizedName(unLocalName);
 		GameRegistry.register(this);
 	}
 
@@ -42,15 +42,15 @@ public class ItemSC extends Item {
         ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 
-	@Override
-	public String getUnlocalizedName() {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
-
-	@Override
-	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-	}
+//	@Override
+//	public String getUnlocalizedName() {
+//		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+//	}
+//
+//	@Override
+//	public String getUnlocalizedName(ItemStack itemStack) {
+//		return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+//	}
 
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {
 		return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);

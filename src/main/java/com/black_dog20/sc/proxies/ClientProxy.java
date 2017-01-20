@@ -11,6 +11,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import com.black_dog20.sc.sc;
 import com.black_dog20.sc.client.settings.Keybindings;
 import com.black_dog20.sc.client.handler.KeyInputEventHandler;
+import com.black_dog20.sc.init.ModBlocks;
+import com.black_dog20.sc.init.ModItems;
 
 
 public class ClientProxy extends CommonProxy {
@@ -51,6 +53,8 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerRenders() {
+		ModItems.initModels();
+		ModBlocks.initModels();
 	}
 
 	@Override

@@ -6,6 +6,8 @@ import com.black_dog20.sc.reference.Reference;
 
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
 public class ModBlocks {
@@ -15,4 +17,9 @@ public class ModBlocks {
 	public static void init() {
 		cobbleGen = new CobbleGen(Material.ROCK);
 	}
+	
+	@SideOnly(Side.CLIENT)
+    public static void initModels() {
+    	cobbleGen.initModel();
+    }
 }

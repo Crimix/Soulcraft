@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.black_dog20.sc.handler.ConfigurationHandler;
 import com.black_dog20.sc.handler.EventHandler;
@@ -27,6 +28,7 @@ import com.black_dog20.sc.network.PacketHandler;
 import com.black_dog20.sc.proxies.IProxy;
 import com.black_dog20.sc.reference.Reference;
 import com.black_dog20.sc.utility.LogHelper;
+import com.black_dog20.sc.worldgen.SCWorldGenerator;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class sc {
@@ -54,6 +56,7 @@ public class sc {
 		ModBlocks.init();
 		PacketHandler.init();
 		Proxy.registerRenders();
+		GameRegistry.registerWorldGenerator(new SCWorldGenerator(), 2);
 		FMLInterModComms.sendMessage("Waila", "register", "com.black_dog20.vut.waila.Waila.onCall");
 
 		LogHelper.info("Pre Initialization Complete!");

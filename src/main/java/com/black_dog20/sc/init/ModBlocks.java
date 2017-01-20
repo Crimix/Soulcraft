@@ -17,6 +17,5 @@ public class ModBlocks {
 	@SuppressWarnings("deprecation")
 	public static void init() {
 		//GameRegistry.registerBlock(ancientTable, "ancientTable");
-		GameRegistry.registerBlock(cobbleGen, "cobbleGen");
 	}
 }

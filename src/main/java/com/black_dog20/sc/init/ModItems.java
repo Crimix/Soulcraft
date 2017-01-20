@@ -11,9 +11,7 @@ public class ModItems {
 	public static ItemTeleport teleporter;
 	
 	public static void init() {
-
 		teleporter = new ItemTeleport();
-		
 	}
 
 }

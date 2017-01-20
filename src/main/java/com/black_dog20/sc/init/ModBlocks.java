@@ -12,10 +12,11 @@ public class ModBlocks {
 
 	//public static final BlockAncientTable ancientTable = new BlockAncientTable();
 	
-	public static final CobbleGen cobbleGen = new CobbleGen(Material.ROCK);
+	public static CobbleGen cobbleGen;
 	
 	@SuppressWarnings("deprecation")
 	public static void init() {
+		cobbleGen = new CobbleGen(Material.ROCK);
 		//GameRegistry.registerBlock(ancientTable, "ancientTable");
 	}
 }

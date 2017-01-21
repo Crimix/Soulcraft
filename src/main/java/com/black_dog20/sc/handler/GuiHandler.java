@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
 import com.black_dog20.sc.sc;
-import com.black_dog20.sc.client.gui.TeleportBookGui;
+import com.black_dog20.sc.client.gui.GuiTeleportBook;
 import com.black_dog20.sc.container.ContainerDummy;
 import com.black_dog20.sc.init.ModBlocks;
 import com.black_dog20.sc.utility.NBTHelper;
@@ -39,7 +39,7 @@ public class GuiHandler implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		
 		if(ID == sc.guiTeleportBook){
-			return new TeleportBookGui(player);
+			return new GuiTeleportBook(player);
 		}
 		/*TileEntity entity = world.getTileEntity(x, y, z);
 

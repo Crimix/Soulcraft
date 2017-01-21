@@ -40,6 +40,7 @@ public class sc {
 	public static IProxy Proxy;
 
 	public static final int guiTeleportBook = 1;
+	public static final int guiTeleportBookAdd = 2;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

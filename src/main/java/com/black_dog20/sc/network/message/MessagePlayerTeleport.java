@@ -15,35 +15,40 @@ import com.black_dog20.sc.handler.ConfigurationHandler;
 import com.black_dog20.sc.utility.TeleportManager;
 
 
-public class MessagePlayerTelePort implements IMessage, IMessageHandler<MessagePlayerTelePort, IMessage> {
-	int dim;
-	double x,y,z;
-	EntityPlayer player;
+public class MessagePlayerTeleport implements IMessage, IMessageHandler<MessagePlayerTeleport, IMessage> {
+	private int dim;
+	private double x,y,z;
+	private float yaw, pitch;
+	private EntityPlayer player;
 
 	@Override
-	public IMessage onMessage(MessagePlayerTelePort message, MessageContext context) {
+	public IMessage onMessage(MessagePlayerTeleport message, MessageContext context) {
 		dim = message.dim;
 		x = message.x;
 		y = message.y;
 		z = message.z;
+		yaw = message.yaw;
+		pitch = message.pitch;
 		player = sc.Proxy.getPlayerFromMessageContext(context);
 		FMLCommonHandler.instance().getMinecraftServerInstance().addScheduledTask(new Runnable()
 		{
 			  public void run() {
-				  TeleportManager.teleportToDimension(player, dim, x, y, z);
+				  TeleportManager.teleportToDimension(player, dim, x, y, z, yaw, pitch);
 			  }
 			});
 		return null;
 	}
 
-	public MessagePlayerTelePort(int dim, double x, double y, double z) {
+	public MessagePlayerTeleport(int dim, double x, double y, double z, float yaw, float pitch) {
 		this.dim=dim;
 		this.x=x;
 		this.y=y;
 		this.z=z;
+		this.yaw = yaw;
+		this.pitch = pitch;
 	}
 	
-	public MessagePlayerTelePort() {}
+	public MessagePlayerTeleport() {}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
@@ -51,6 +56,8 @@ public class MessagePlayerTelePort implements IMessage, IMessageHandler<MessageP
 		buf.writeDouble(x);
 		buf.writeDouble(y);
 		buf.writeDouble(z);
+		buf.writeFloat(yaw);
+		buf.writeFloat(pitch);
 	}
 
 	@Override
@@ -59,5 +66,7 @@ public class MessagePlayerTelePort implements IMessage, IMessageHandler<MessageP
 		this.x = buf.readDouble();
 		this.y = buf.readDouble();
 		this.z = buf.readDouble();
+		this.yaw = buf.readFloat();
+		this.pitch = buf.readFloat();
 	}
 }

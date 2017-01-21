@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
+import com.black_dog20.sc.sc;
 import com.black_dog20.sc.reference.Reference;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
@@ -22,14 +23,14 @@ public class GuiTeleportBook extends GuiScreen{
     protected int guiWidth = 256;
     protected int guiHeight = 200;
     private GuiLocationList locationList;
-    private EntityPlayer player;
-    private GuiButton remove;
-    private boolean delete = false;
+    public EntityPlayer player;
+    private GuiButton add;
 
     public GuiTeleportBook(EntityPlayer player) {
     	super();
     	this.player = player;
     }
+    
     
 	@Override
 	public boolean doesGuiPauseGame() {
@@ -45,10 +46,12 @@ public class GuiTeleportBook extends GuiScreen{
 
 	@Override
 	public void initGui() {
+		buttonList.add(add = new GuiButton(-1, this.width/4, this.height/4+120,80,20, "Add Location"));
 		locationList = new GuiLocationList(mc, width/2, height/2, height/4, 3*height/4, width/4, 25, width, height, this);
-		for(GuiLocation entry : locationList.getList())
-			buttonList.add(entry.getButton());
-		buttonList.add(remove = new GuiButton(-1, width/2 - 20, height/4, 90, 20, "§4Change to Remove mode"));
+		if(locationList.getSize()>0)
+			for(GuiLocation entry : locationList.getList())
+				buttonList.add(entry.getButton());
+		add.enabled = true;
 	}
 
 	@Override
@@ -63,9 +66,8 @@ public class GuiTeleportBook extends GuiScreen{
 	
 	@Override
 	protected void actionPerformed(GuiButton button) {
-		if(button.id==-2){
-			remove.displayString = "Change to TP mode";
-			delete = true;
+		if(button.id == add.id){
+			player.openGui(sc.instance, sc.guiTeleportBookAdd, player.worldObj, (int)player.posX, (int)player.posY, (int)player.posZ);	
 		}
 	}
 	

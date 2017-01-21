@@ -7,9 +7,8 @@ import net.minecraft.world.WorldServer;
 
 public class TeleportManager {
 	
-	public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z) {
+	public static void teleportToDimension(EntityPlayer player, int dimension, double x, double y, double z, float yaw, float pitch) {
         int oldDimension = player.worldObj.provider.getDimension();
-        System.out.println("tp x="+ x +" y="+ y +" z=" + z);
         EntityPlayerMP entityPlayerMP = (EntityPlayerMP) player;
         MinecraftServer server = ((EntityPlayerMP) player).worldObj.getMinecraftServer();
         WorldServer worldServer = server.worldServerForDimension(dimension);
@@ -18,10 +17,10 @@ public class TeleportManager {
         if(oldDimension != dimension){
         	worldServer.getMinecraftServer().getPlayerList().transferPlayerToDimension(entityPlayerMP, dimension, new SCTeleporter(worldServer, x, y, z));
         }
-        player.setPositionAndUpdate(x, y, z);
+        player.setPositionAndRotation(x, y, z, yaw, pitch);
         if (oldDimension == 1) {
             // For some reason teleporting out of the end does weird things.
-            player.setPositionAndUpdate(x, y, z);
+        	player.setPositionAndRotation(x, y, z, yaw, pitch);
             worldServer.spawnEntityInWorld(player);
             worldServer.updateEntityWithOptionalForce(player, false);
         }

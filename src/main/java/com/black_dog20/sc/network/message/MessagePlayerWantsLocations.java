@@ -17,39 +17,24 @@ import com.black_dog20.sc.utility.LocationHelper;
 import com.black_dog20.sc.utility.TeleportManager;
 
 
-public class MessagePlayerAddLocation implements IMessage, IMessageHandler<MessagePlayerAddLocation, IMessage> {
-	private String name;
-
+public class MessagePlayerWantsLocations implements IMessage, IMessageHandler<MessagePlayerWantsLocations, IMessage> {
 	private EntityPlayer player;
 
 	@Override
-	public IMessage onMessage(MessagePlayerAddLocation message, MessageContext context) {
+	public IMessage onMessage(MessagePlayerWantsLocations message, MessageContext context) {
 
 		player = sc.Proxy.getPlayerFromMessageContext(context);
-		name = message.name;
-		FMLCommonHandler.instance().getMinecraftServerInstance().addScheduledTask(new Runnable()
-		{
-			  public void run() {
-				  LocationHelper.AddLocation(player, name);
-				  
-			  }
-			});
-		return null;
+		
+		return new MessageServerSendsLocations(LocationHelper.GetLocationsFromServerPlayer(player));
 	}
 
-	public MessagePlayerAddLocation(String name) {
-		this.name=name;
-	}
-	
-	public MessagePlayerAddLocation() {}
+	public MessagePlayerWantsLocations() {}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
-		ByteBufUtils.writeUTF8String(buf, name);
 	}
 
 	@Override
 	public void fromBytes(ByteBuf buf) {
-		this.name = ByteBufUtils.readUTF8String(buf);
 	}
 }

@@ -3,6 +3,7 @@ package com.black_dog20.sc.network.message;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -17,39 +18,38 @@ import com.black_dog20.sc.utility.LocationHelper;
 import com.black_dog20.sc.utility.TeleportManager;
 
 
-public class MessagePlayerAddLocation implements IMessage, IMessageHandler<MessagePlayerAddLocation, IMessage> {
-	private String name;
+public class MessageServerSendsLocations implements IMessage, IMessageHandler<MessageServerSendsLocations, IMessage> {
+	private NBTTagCompound nbt;
 
 	private EntityPlayer player;
 
 	@Override
-	public IMessage onMessage(MessagePlayerAddLocation message, MessageContext context) {
+	public IMessage onMessage(MessageServerSendsLocations message, MessageContext context) {
 
 		player = sc.Proxy.getPlayerFromMessageContext(context);
-		name = message.name;
-		FMLCommonHandler.instance().getMinecraftServerInstance().addScheduledTask(new Runnable()
+		nbt = message.nbt;
+		Minecraft.getMinecraft().addScheduledTask(new Runnable()
 		{
 			  public void run() {
-				  LocationHelper.AddLocation(player, name);
-				  
+				  LocationHelper.SetLocationToClientPlayer(player, nbt);
 			  }
 			});
 		return null;
 	}
 
-	public MessagePlayerAddLocation(String name) {
-		this.name=name;
+	public MessageServerSendsLocations(NBTTagCompound nbt) {
+		this.nbt=nbt;
 	}
 	
-	public MessagePlayerAddLocation() {}
+	public MessageServerSendsLocations() {}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
-		ByteBufUtils.writeUTF8String(buf, name);
+		ByteBufUtils.writeTag(buf, nbt);
 	}
 
 	@Override
 	public void fromBytes(ByteBuf buf) {
-		this.name = ByteBufUtils.readUTF8String(buf);
+		this.nbt = ByteBufUtils.readTag(buf);
 	}
 }

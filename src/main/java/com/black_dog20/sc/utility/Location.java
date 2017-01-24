@@ -1,8 +1,10 @@
 package com.black_dog20.sc.utility;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.INBTSerializable;
+import net.minecraftforge.fml.relauncher.Side;
 
 import com.black_dog20.sc.network.PacketHandler;
 import com.black_dog20.sc.network.message.MessagePlayerAddLocation;
@@ -28,7 +30,12 @@ public class Location implements INBTSerializable<NBTTagCompound> {
 	}
 	
 	public void Teleport(){
-		PacketHandler.network.sendToServer(new MessagePlayerTeleport(dim, x, y, z, yaw, pitch));
+		if(Side.CLIENT.isClient()){
+			System.err.println("tp");
+			Minecraft.getMinecraft().thePlayer.rotationPitch = pitch;
+			Minecraft.getMinecraft().thePlayer.rotationYaw = yaw;
+		}
+		PacketHandler.network.sendToServer(new MessagePlayerTeleport(dim, x, y, z, yaw));
 	}
 
 	@Override
@@ -53,5 +60,11 @@ public class Location implements INBTSerializable<NBTTagCompound> {
 		this.z = nbt.getDouble("z");
 		this.yaw = nbt.getFloat("yaw");
 		this.pitch = nbt.getFloat("pitch");
+	}
+	
+	public static Location GetLocationFromNBT(NBTTagCompound nbt){
+		Location l = new Location();
+		l.deserializeNBT(nbt);
+		return l;
 	}
 }

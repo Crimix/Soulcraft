@@ -12,6 +12,8 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
 import com.black_dog20.sc.sc;
+import com.black_dog20.sc.network.PacketHandler;
+import com.black_dog20.sc.network.message.MessagePlayerWantsLocations;
 import com.black_dog20.sc.reference.Reference;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
@@ -46,6 +48,7 @@ public class GuiTeleportBook extends GuiScreen{
 
 	@Override
 	public void initGui() {
+		PacketHandler.network.sendToServer(new MessagePlayerWantsLocations());
 		buttonList.add(add = new GuiButton(-1, this.width/4, this.height/4+120,80,20, "Add Location"));
 		locationList = new GuiLocationList(mc, width/2, height/2, height/4, 3*height/4, width/4, 25, width, height, this);
 		if(locationList.getSize()>0)
@@ -69,13 +72,6 @@ public class GuiTeleportBook extends GuiScreen{
 		if(button.id == add.id){
 			player.openGui(sc.instance, sc.guiTeleportBookAdd, player.worldObj, (int)player.posX, (int)player.posY, (int)player.posZ);	
 		}
-	}
-	
-	@Override
-	protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
-		for (GuiLocation entry : locationList.getList())
-			
-		super.mouseClicked(mouseX, mouseY, mouseButton);
 	}
 
 }

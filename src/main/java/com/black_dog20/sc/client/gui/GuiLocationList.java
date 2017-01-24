@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.lwjgl.input.Mouse;
 
+import com.black_dog20.sc.network.PacketHandler;
+import com.black_dog20.sc.network.message.MessagePlayerWantsLocations;
+import com.black_dog20.sc.utility.Location;
 import com.black_dog20.sc.utility.LocationHelper;
 
 import net.minecraft.client.Minecraft;
@@ -23,10 +26,10 @@ public class GuiLocationList extends GuiScrollingList{
 			int screenWidth, int screenHeight, GuiScreen parent) {
 		super(client, width, height, top, bottom, left, entryHeight, screenWidth, screenHeight);
 		this.parent = parent;
-		List<String> names = LocationHelper.GetLocationNames(((GuiTeleportBook) parent).player);
+		List<Location> locations = LocationHelper.GetLocationNames(((GuiTeleportBook) parent).player);
 		int index = 0;
-		this.locationList.add(new GuiLocation(-5, ""));
-		for(String s : names)
+		this.locationList.add(new GuiLocation(-5, "")); //Because else the add button does not work
+		for(Location s : locations)
 			this.locationList.add(new GuiLocation(index++, s));
 	}
 
@@ -36,7 +39,10 @@ public class GuiLocationList extends GuiScrollingList{
 	}
 
 	@Override
-	protected void elementClicked(int index, boolean doubleClick) {	}
+	protected void elementClicked(int index, boolean doubleClick) {	
+		GuiLocation entry = locationList.get(index);
+		entry.teleport();
+	}
 
 	@Override
 	protected boolean isSelected(int index) {

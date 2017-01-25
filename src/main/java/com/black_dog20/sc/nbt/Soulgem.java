@@ -5,7 +5,7 @@ import net.minecraftforge.common.util.INBTSerializable;
 
 public class Soulgem implements INBTSerializable<NBTTagCompound>{
 	
-	private String type;
+	private String type = "";
 	private int fullness;
 	
 	public Soulgem(String type , int fullness){
@@ -17,8 +17,16 @@ public class Soulgem implements INBTSerializable<NBTTagCompound>{
 		
 	}
 	
+	public String GetType(){
+		return type;
+	}
+	
+	public int GetStored(){
+		return fullness;
+	}
+	
 	public void AddSoul(String type, int amount){
-		if(this.type == null){
+		if(this.type.equals("")){
 			this.type = type;
 		}
 		else if(!type.equals(this.type)){
@@ -43,7 +51,7 @@ public class Soulgem implements INBTSerializable<NBTTagCompound>{
 		this.fullness = nbt.getInteger("fullness");
 	}
 	
-	public static Soulgem GetLocationFromNBT(NBTTagCompound nbt){
+	public static Soulgem GetSoulgemFromNBT(NBTTagCompound nbt){
 		Soulgem l = new Soulgem();
 		l.deserializeNBT(nbt);
 		return l;

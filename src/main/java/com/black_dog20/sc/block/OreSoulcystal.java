@@ -8,9 +8,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
-public class BlockSoulcystalOre extends BlockSC{
+public class OreSoulcystal extends BlockSC{
 
-	public BlockSoulcystalOre() {
+	public OreSoulcystal() {
 		super("OreSoulcystal", Material.ROCK);
 		this.setHardness(2.0F);
 		this.setHarvestLevel("pickaxe", 2);

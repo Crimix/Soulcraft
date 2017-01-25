@@ -2,7 +2,7 @@ package com.black_dog20.sc.init;
 
 import com.black_dog20.sc.block.BlockSoulBarrier;
 import com.black_dog20.sc.block.BlockSoulBarrierFloor;
-import com.black_dog20.sc.block.BlockSoulcystalOre;
+import com.black_dog20.sc.block.OreSoulcystal;
 import com.black_dog20.sc.block.CobbleGen;
 import com.black_dog20.sc.reference.Reference;
 
@@ -15,13 +15,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModBlocks {
 
 	public static CobbleGen cobbleGen;
-	public static BlockSoulcystalOre soulcystalOre;
+	public static OreSoulcystal soulcystalOre;
 	public static BlockSoulBarrier soulBarrier;
 	public static BlockSoulBarrierFloor soulBarrierFloor;
 	
 	public static void init() {
 		cobbleGen = new CobbleGen(Material.ROCK);
-		soulcystalOre = new BlockSoulcystalOre();
+		soulcystalOre = new OreSoulcystal();
 		soulBarrier = new BlockSoulBarrier();
 		soulBarrierFloor = new BlockSoulBarrierFloor();
 	}

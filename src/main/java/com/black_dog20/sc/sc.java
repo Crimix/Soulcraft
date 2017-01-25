@@ -9,8 +9,12 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.RecipeSorter;
+import net.minecraftforge.oredict.RecipeSorter.Category;
 
+import com.black_dog20.sc.crafting.NBTSensetiveShapedOreRecipe;
 import com.black_dog20.sc.handler.ConfigurationHandler;
 import com.black_dog20.sc.handler.EventHandler;
 import com.black_dog20.sc.handler.GuiHandler;
@@ -51,6 +55,7 @@ public class sc {
 		PacketHandler.init();
 		Proxy.registerRenders();
 		GameRegistry.registerWorldGenerator(new SCWorldGenerator(), 2);
+		RecipeSorter.register("soulcraft:nbt_shaped", NBTSensetiveShapedOreRecipe.class, Category.SHAPED, "after:minecraft:shaped before:minecraft:shapeless");
 		FMLInterModComms.sendMessage("Waila", "register", "com.black_dog20.vut.waila.Waila.onCall");
 
 		LogHelper.info("Pre Initialization Complete!");

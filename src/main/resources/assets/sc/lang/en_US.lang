@@ -1,10 +1,15 @@
 //Items
 item.ItemTeleport.name=Teleportation tome
+item.ItemSoulgem.name=Soulgem
+item.ItemSoulcystal.name=Soulcystal
+item.soulManipulator.name=Soul Manipulator
 
 //Entities
 
 //Blocks
 tile.cobbleGen.name=Cobble generator
+tile.BlockSoulBarrier.name=Soul Barrier
+tile.BlockSoulBarrierFloor.name=Soul Barrier Floor
 
 //Info
 tile.cobbleGen.info=Right-click to get ONE cobblestone

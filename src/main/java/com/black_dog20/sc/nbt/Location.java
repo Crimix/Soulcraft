@@ -1,13 +1,11 @@
-package com.black_dog20.sc.utility;
+package com.black_dog20.sc.nbt;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.fml.relauncher.Side;
 
 import com.black_dog20.sc.network.PacketHandler;
-import com.black_dog20.sc.network.message.MessagePlayerAddLocation;
 import com.black_dog20.sc.network.message.MessagePlayerTeleport;
 
 public class Location implements INBTSerializable<NBTTagCompound> {

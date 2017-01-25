@@ -1,9 +1,6 @@
 package com.black_dog20.sc.handler;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
@@ -11,8 +8,6 @@ import com.black_dog20.sc.sc;
 import com.black_dog20.sc.client.gui.GuiAddTeleportLocation;
 import com.black_dog20.sc.client.gui.GuiTeleportBook;
 import com.black_dog20.sc.container.ContainerDummy;
-import com.black_dog20.sc.init.ModBlocks;
-import com.black_dog20.sc.utility.NBTHelper;
 
 
 public class GuiHandler implements IGuiHandler {

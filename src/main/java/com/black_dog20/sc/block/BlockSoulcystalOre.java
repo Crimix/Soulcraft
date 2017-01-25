@@ -6,7 +6,6 @@ import com.black_dog20.sc.init.ModItems;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 public class BlockSoulcystalOre extends BlockSC{

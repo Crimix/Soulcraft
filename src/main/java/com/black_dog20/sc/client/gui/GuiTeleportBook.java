@@ -1,24 +1,12 @@
 package com.black_dog20.sc.client.gui;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiTextField;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
-
 import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
-
 import com.black_dog20.sc.sc;
 import com.black_dog20.sc.network.PacketHandler;
 import com.black_dog20.sc.network.message.MessagePlayerWantsLocations;
-import com.black_dog20.sc.reference.Reference;
-import com.mojang.realmsclient.gui.ChatFormatting;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class GuiTeleportBook extends GuiScreen{
 

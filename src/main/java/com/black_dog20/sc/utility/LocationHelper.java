@@ -3,6 +3,7 @@ package com.black_dog20.sc.utility;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.black_dog20.sc.nbt.Location;
 import com.black_dog20.sc.reference.NBTTags;
 
 import net.minecraft.entity.player.EntityPlayer;

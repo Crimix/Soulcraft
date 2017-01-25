@@ -3,12 +3,10 @@ package com.black_dog20.sc.proxies;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 
-import com.black_dog20.sc.sc;
 import com.black_dog20.sc.client.settings.Keybindings;
 import com.black_dog20.sc.client.handler.KeyInputEventHandler;
 import com.black_dog20.sc.init.ModBlocks;

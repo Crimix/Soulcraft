@@ -5,5 +5,4 @@ public class ItemSoulcystal extends ItemSC {
 	public ItemSoulcystal(){
 		super("ItemSoulcystal");
 	}
-
 }

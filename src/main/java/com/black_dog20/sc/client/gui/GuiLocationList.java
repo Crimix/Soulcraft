@@ -1,14 +1,9 @@
 package com.black_dog20.sc.client.gui;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.lwjgl.input.Mouse;
-
-import com.black_dog20.sc.network.PacketHandler;
-import com.black_dog20.sc.network.message.MessagePlayerWantsLocations;
-import com.black_dog20.sc.utility.Location;
+import com.black_dog20.sc.nbt.Location;
 import com.black_dog20.sc.utility.LocationHelper;
 
 import net.minecraft.client.Minecraft;

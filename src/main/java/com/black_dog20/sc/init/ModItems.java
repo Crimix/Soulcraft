@@ -1,5 +1,6 @@
 package com.black_dog20.sc.init;
 
+import com.black_dog20.sc.item.ItemSC;
 import com.black_dog20.sc.item.ItemSoulcystal;
 import com.black_dog20.sc.item.ItemTeleport;
 import com.black_dog20.sc.reference.Reference;
@@ -13,16 +14,19 @@ public class ModItems {
 	
 	public static ItemTeleport teleporter;
 	public static ItemSoulcystal soulcystal;
+	public static ItemSC soulManipulator;
 	
 	public static void init() {
 		teleporter = new ItemTeleport();
 		soulcystal = new ItemSoulcystal();
+		soulManipulator = new ItemSC("soulManipulator");
 	}
 	
     @SideOnly(Side.CLIENT)
     public static void initModels() {
     	teleporter.initModel();
     	soulcystal.initModel();
+    	soulManipulator.initModel();
     }
 
 }

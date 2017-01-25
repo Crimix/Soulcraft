@@ -4,7 +4,6 @@ import java.util.Random;
 
 import com.black_dog20.sc.init.ModBlocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;

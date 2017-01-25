@@ -21,4 +21,7 @@ keys.sc.down=Down
 keys.sc.start=Start
 keys.sc.vtol=VTOL
 
+//Tipes
+sc.tips.soulbound
+
 //MSG

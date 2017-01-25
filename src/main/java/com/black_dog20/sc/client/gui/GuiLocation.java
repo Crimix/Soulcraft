@@ -1,6 +1,6 @@
 package com.black_dog20.sc.client.gui;
 
-import com.black_dog20.sc.utility.Location;
+import com.black_dog20.sc.nbt.Location;
 
 import net.minecraft.client.gui.GuiButton;
 

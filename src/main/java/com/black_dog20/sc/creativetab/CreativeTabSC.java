@@ -1,7 +1,6 @@
 package com.black_dog20.sc.creativetab;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import com.black_dog20.sc.init.ModItems;

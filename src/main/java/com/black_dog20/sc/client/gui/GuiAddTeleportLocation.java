@@ -8,11 +8,8 @@ import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.entity.player.EntityPlayer;
 
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import com.black_dog20.sc.network.PacketHandler;
 import com.black_dog20.sc.network.message.MessagePlayerAddLocation;
-import com.black_dog20.sc.utility.LocationHelper;
 
 public class GuiAddTeleportLocation extends GuiScreen{
 

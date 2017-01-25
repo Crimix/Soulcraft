@@ -1,13 +1,8 @@
 package com.black_dog20.sc.item;
 
 import com.black_dog20.sc.sc;
-import com.black_dog20.sc.network.PacketHandler;
-import com.black_dog20.sc.network.message.MessagePlayerAddLocation;
-import com.black_dog20.sc.utility.TeleportManager;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;

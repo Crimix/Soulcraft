@@ -1,14 +1,15 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
+  "modid": "sc",
+  "name": "SoulCraft",
+  "description": "Use souls to craft op stuff",
+  "version": "${mod_version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Black_dog20, SimmeBabz"
+],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

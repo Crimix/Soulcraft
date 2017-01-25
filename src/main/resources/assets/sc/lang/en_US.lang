@@ -1,42 +1,24 @@
 //Items
-item.vut:hoverBike.name=Hover Bike
-item.vut:wrench.name=Wrench
-item.vut:engine.name=Engine
-item.vut:chest.name=Small Chest Upgrade
-item.vut:chest2.name=Big Chest Upgrade
-item.vut:flightDrive.name=Flight Drive
-item.vut:security.name=Security Upgrade 
-item.vut:vtol.name=VTOL Upgrade
-item.vut:fuelTank.name=Fuel Tank
-item.vut:fuel.name=Hover Bike Fuel
-item.vut:fuel1.name=Hover Bike Base Fuel
-item.vut:fuel2.name=Hover Bike Unprocessed Fuel
-item.vut:hammer.name=Hammer
-item.vut:front.name=Hover Bike Front
-item.vut:back.name=Hover Bike Back
-item.vut:flightCore.name=Flight Drive Core
-item.vut:ingotBlueIron.name=Blue Iron Ingot
-item.vut:ingotBlackIron.name=Black Iron Ingot
-item.vut:dustBlackIron.name=Black Iron Dust
-
+item.ItemTeleport.name=Teleportation tome
 
 //Entities
-entity.vut.speeder.name=Hover Bike
 
 //Blocks
+tile.cobbleGen.name=Cobble generator
 
+//Info
+tile.cobbleGen.info=Right-click to get ONE cobblestone
+tile.OreSoulcystal.name=Soulcystal Ore
 
 //Container
 
 //Misc
-itemGroup.vut=Vehicles Utils and Tools
+itemGroup.sc=Soulcraft
 
 //Keys
-keys.vut.category=Vehicles Utils and Tools
-keys.vut.down=Down
-keys.vut.start=Start
-keys.vut.vtol=VTOL
+keys.sc.category=Soulcraft
+keys.sc.down=Down
+keys.sc.start=Start
+keys.sc.vtol=VTOL
 
 //MSG
-msg.message_hoverBikeNotOwnerBreak.txt=You can't break this, you are not the owner. The Owner is:
-msg.message_hoverBikeNotOwner.txt=You can't access this, you are not the owner. The Owner is:

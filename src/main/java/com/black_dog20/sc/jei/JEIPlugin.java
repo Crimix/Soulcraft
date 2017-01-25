@@ -1,5 +1,11 @@
 package com.black_dog20.sc.jei;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import mezz.jei.api.BlankModPlugin;
 import mezz.jei.api.IJeiRuntime;
@@ -27,7 +33,11 @@ public class JEIPlugin extends BlankModPlugin{
 
 	@Override
 	public void register(IModRegistry registry) {
-		registry.addDescription(new ItemStack(ModBlocks.cobbleGen), "Right-click to get ONE cobblestone");
+		List<ItemStack> list = new ArrayList<ItemStack>();
+		list.add(new ItemStack(ModBlocks.cobbleGen));
+		
+		for(ItemStack stack : list)
+				registry.addDescription(stack, I18n.format(stack.getItem().getUnlocalizedName()+".info"));
 		
 	}
 

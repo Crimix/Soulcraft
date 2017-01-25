@@ -2,6 +2,8 @@ package com.black_dog20.sc.worldgen;
 
 import java.util.Random;
 
+import com.black_dog20.sc.init.ModBlocks;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
@@ -40,7 +42,7 @@ public class SCWorldGenerator implements IWorldGenerator{
 			int randomPosY = random.nextInt(128);//29 = spawns up to height
 			int randomPosZ = j + random.nextInt(16);
 			
-			(new WorldGenMinable(Blocks.COAL_BLOCK.getDefaultState(), 6,  BlockMatcher.forBlock(Blocks.STONE))).generate(world, random, new BlockPos(randomPosX, randomPosY, randomPosZ));
+			(new WorldGenMinable(ModBlocks.soulcystalOre.getDefaultState(), 6,  BlockMatcher.forBlock(Blocks.STONE))).generate(world, random, new BlockPos(randomPosX, randomPosY, randomPosZ));
 		}
 	}
 

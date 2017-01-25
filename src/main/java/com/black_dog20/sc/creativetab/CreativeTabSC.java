@@ -13,7 +13,7 @@ public class CreativeTabSC{
 
 		@Override
 		public Item getTabIconItem() {
-			return Items.WATER_BUCKET;
+			return ModItems.soulcystal;
 		}
 
 		@Override

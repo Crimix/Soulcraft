@@ -1,7 +1,7 @@
 //Items
 item.ItemTeleport.name=Teleportation tome
 item.ItemSoulgem.name=Soulgem
-item.ItemSoulcystal.name=Soulcystal
+item.ItemSoulcystal.name=Soulcrystal
 item.soulManipulator.name=Soul Manipulator
 
 //Entities
@@ -10,10 +10,18 @@ item.soulManipulator.name=Soul Manipulator
 tile.cobbleGen.name=Cobble generator
 tile.BlockSoulBarrier.name=Soul Barrier
 tile.BlockSoulBarrierFloor.name=Soul Barrier Floor
+tile.OreSoulcystal.name=Soulcrystal Ore
 
-//Info
+//Info Blocks
 tile.cobbleGen.info=Right-click to get ONE cobblestone
-tile.OreSoulcystal.name=Soulcystal Ore
+tile.OreSoulcystal.info=Mine to get Soulcrystals
+tile.BlockSoulBarrier.info=Player can walk though, mobs cannot. Cannot be destroyed by the wither, only by a Soul Manipulator
+tile.BlockSoulBarrierFloor.info=Cannot be destroyed by the wither, only by a Soul Manipulator
+
+//Info Items
+item.ItemSoulcystal.info=Mine Soulcrystal ore to get Soulcrystals
+item.soulManipulator.info=Used to get soulgems and manipulate soul barriers
+item.ItemTeleport.info=Can set and teleport to any location in any dimension
 
 //Container
 
@@ -26,7 +34,7 @@ keys.sc.down=Down
 keys.sc.start=Start
 keys.sc.vtol=VTOL
 
-//Tipes
+//Tips
 sc.tips.soulbound
 
 //MSG

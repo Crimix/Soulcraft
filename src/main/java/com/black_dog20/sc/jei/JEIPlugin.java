@@ -32,6 +32,12 @@ public class JEIPlugin extends BlankModPlugin{
 	public void register(IModRegistry registry) {
 		List<ItemStack> list = new ArrayList<ItemStack>();
 		list.add(new ItemStack(ModBlocks.cobbleGen));
+		list.add(new ItemStack(ModItems.soulcystal));
+		list.add(new ItemStack(ModBlocks.soulcystalOre));
+		list.add(new ItemStack(ModBlocks.soulBarrier));
+		list.add(new ItemStack(ModBlocks.soulBarrierFloor));
+		list.add(new ItemStack(ModItems.soulManipulator));
+		list.add(new ItemStack(ModItems.teleporter));
 		
 		for(ItemStack stack : list)
 				registry.addDescription(stack, I18n.format(stack.getItem().getUnlocalizedName()+".info"));

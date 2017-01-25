@@ -36,7 +36,7 @@ public class ItemSoulgem extends ItemSC {
 	}
 	
 	public ItemStack GetItemForCraftingResult(){
-		ItemStack stack = new ItemStack(this);
+		ItemStack stack = new ItemStack(this,3);
 		NBTTagCompound nbt = new NBTTagCompound();
 		nbt.setTag(NBTTags.NBT_PROPERTISE, new Soulgem().serializeNBT());
 		stack.setTagCompound(nbt);
